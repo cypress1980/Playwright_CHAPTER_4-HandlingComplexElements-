@@ -2,7 +2,7 @@ const { test, expect } = require("@playwright/test");
 const fs = require('fs');
 test('Download Multiple files and Apply Asseration', async ({page}) => {
     await page.goto('https://the-internet.herokuapp.com/download')
-    const downloadFile = ['test.xlsx', 'sample.txt']
+    const downloadFile = ['testfile.txt', 'sample.pdf']
     for (const fileName of downloadFile) {
       const [download] = await Promise.all([
         page.waitForEvent('download'),
